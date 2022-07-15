@@ -6,8 +6,9 @@
 def solution(participant, completion):
     count={}
     for i in participant: # 동명이인 구별
-        try: count[i] += 1
-        except: count[i]=1
+        #try: count[i] += 1
+        #except: count[i]=1
+        count = count.get(i, 0) +1 # i가 이미 있으면 +1 없으면 0
     
     for j in completion: # 완주자 구별
         if j in count:
